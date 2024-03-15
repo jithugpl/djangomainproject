@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+  <img src="{% static 'images/pet3.jpg' %}" height="700px" width="100%">
+</div>
+<div class="container-fluid mt-4 " style="margin-bottom:50px;">
+    <h3 class="text-center">100% Safe Arrival Guarantee</h3>
+    <p style="'text-align:justify;">Trust and convenience of ethical, healthy, and sustainable pets, pet accessories, and pet-care solutions. petZworld is the fruit of labour and love. Brought to you by a collective of experienced pet-lovers, citizen scientists, and hobbyists. We believe - Pets are simply the best.</p>
+</div>
+            <a href="http://127.0.0.1:8000/allproducts/Pet%20Food">
+ <img src="{% static 'images/whiskas.jpg' %}" height="400px" width="100%">
+</a>
+
+    <h3 class="text-center">PRODUCTS</h3>
+
+</div>
+
+
+<div class="container-fluid mt-3"style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+
+            <div class="card" style="width:32rem;margin-bottom:50px;">
+                            <a href="{% url 'shop:allproducts' i.name %}">
+ <img src="{{i.image.url}}" class="card-img-top" alt="..." height="300px" width="100%">
+</a>
+
+  <div class="card-body bg-warning">
+    <h3 class="card-title text-center">{{i.name}}</h3>
+      <a href="{% url 'shop:allproducts' i.name %}" class="btn btn-dark" style="position:relative;left:38%;">Shop Now</a>
+
+
+
+  </div>
+</div>
+        </div>{% endfor %}
+        <div class="container-fluid mt-4 " style="margin-bottom:50px;">
+            <a href="http://127.0.0.1:8000/detail/Vet%20Consultation">
+ <img src="{% static 'images/vetconsult1.jpg' %}" height="400px" width="100%">
+</a>
+
+
+    <h3 class="text-center">Our Story</h3>
+    <p style="'text-align:justify;">petZworld began with humble beginnings and a single store. It grew slowly and organically through the years, now we have 6 stores across Mumbai and a pan India presence with our website. Our aim has always been to provide the largest range of pet products at reasonable prices and make the shopping experience comfortable for pet parents.
+
+We are a family run business that has built its online presence through the foundation of the brick and mortar stores. We hope to continue to serve the pet parent community with passion, drive and commitment. Read more to find out a bit more about our family!
+
+</p>
+</div>
+
+        <div class="container-fluid mt-0  " style="margin-bottom:30px;">
+            <h3 class="text-center">Address:</h3>
+    <p style="text-align:center"> 1335, 11th Cross Rd, Stage 3,<br> Indiranagar, Bengaluru, Karnataka 560038<br>
+        contact:+91-987654321<br>
+        email:petZworld@gmail.com
+
+    </p>
+</div>
+
+    </div>
+</div>
+
+{% endblock %}

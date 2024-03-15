@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid m-5">
+    <center>
+        <h3 class="text-center text-dark">{{m}}</h3>
+        <img src="{% static 'images/thankyou1.jpg' %}" height="300px" width="500px"><br>
+        <a href="{% url 'shop:allcat' %}" class="btn btn-dark " style="position:absolute;right:42%;"> <b>Continue Shopping</b></a>
+
+
+    </center>
+</div>
+
+
+  {% endblock %}
